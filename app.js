@@ -8,6 +8,12 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiYm9nb21pbGFtIiwiYSI6ImNrOTNheWZsMjAwYmszbHFue
 var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/bogomilam/cka3k5ygh0hn61iss6j2muykh',
+    latitude: 0,
+    longitude: 20,
+    width: "100vw",
+    height: "100vh",
+    zoom: 1.5,
+    center: [0, 20]
     });
 
     map.on('load', function() { //On map load, we want to do some stuff
