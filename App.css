@@ -1,13 +1,13 @@
-.map {
+#map {
     width: 100vw;
     height: 100vh;
   }
-/* 
-  
+
   #map .mapboxgl-popup-content {
     padding: 10px;
     max-width: 300px;
     padding-top: 20px;
+    background: rgb(87, 190, 87); 
   }
   #map .mapboxgl-popup-content ul {
     list-style: none;
@@ -24,4 +24,9 @@
     float:left; 
     width: 30px; 
     margin-right: 10px;
-  } */
+  } 
+
+  .confirmed {
+    background-color: brown
+    ;
+  }

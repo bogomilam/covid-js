@@ -25,22 +25,44 @@ var map = new mapboxgl.Map({
           'type': 'fill',
           'paint': {
             'fill-color': '#52489C', //this is the color you want your tileset to have (I used a nice purple color)
-            'fill-outline-color': '#F2F2F2' //this helps us distinguish individual countries a bit better by giving them an outline
+            'fill-outline-color': '#00FFFF'
           }
         });
       });
 
       map.on('click', 'countries', function (mapEl) {
           const country = mapEl.features[0].properties.ADMIN
-        //   console.log(country)
-          const countries = fetchAPI()
-          
-        //   const selected = countries.filter(c => {
-        //       c.country.include(country)
-        //   })
+          console.log(mapEl.features)
+         fetch(DATA_POINT, {  
+            "method": "GET",
+            "headers": {
+              "x-rapidapi-host": "covid19-data.p.rapidapi.com",
+              "x-rapidapi-key": "7b4a939c2amsh6771ab45c110f92p15524ajsn651844dca99f"
+            }
+          })
+          .then(res => res.json())
+          .then(data => {
+             const reports = data
+                reports
+                const selected = reports.filter(c => c.country.includes(country))
+                console.log(selected)
 
-        //   console.log(countries)
+                const html = `
+                <h3>${selected[0].country}</h3>
+                <ul>
+                    <li class='confirmed'>
+                    Cases: ${selected[0].confirmed}
+                    </li>
+                </ul>
+                `
+            
+                
 
+                new mapboxgl.Popup()
+                .setLngLat(mapEl.lngLat)
+                .setHTML(html)
+                .addTo(map)
+          })
       })
 
 
