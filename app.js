@@ -28,7 +28,7 @@ var map = new mapboxgl.Map({
 
       map.on('click', 'countries', function (mapEl) {
           const country = mapEl.features[0].properties.ADMIN
-          console.log(mapEl.features)
+          // console.log(mapEl.features)
          fetch(DATA_POINT, {  
             "method": "GET",
             "headers": {
@@ -41,7 +41,7 @@ var map = new mapboxgl.Map({
              const reports = data
                 reports
                 const selected = reports.filter(c => c.country.includes(country))
-                console.log(selected)
+                // console.log(selected)
 
                 const html = `
                 <h3>${selected[0].country}</h3>
