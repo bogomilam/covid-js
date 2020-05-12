@@ -1,9 +1,5 @@
 import 'https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js'
 
-let name = "bogo"
-const age = 25
-
-console.log(name, age)
 
 const DATA_POINT = "https://covid19-data.p.rapidapi.com/all"
 
@@ -64,10 +60,8 @@ var map = new mapboxgl.Map({
                     </li>    
                 </ul>
                 `
-            
-                
 
-                new mapboxgl.Popup()
+                new mapboxgl.Popup({className: 'popup'})
                 .setLngLat(mapEl.lngLat)
                 .setHTML(html)
                 .addTo(map)
