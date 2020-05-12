@@ -7,7 +7,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiYm9nb21pbGFtIiwiYSI6ImNrOTNheWZsMjAwYmszbHFue
 
 var map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/mapbox/dark-v10',
+    style: 'mapbox://styles/bogomilam/cka3k5ygh0hn61iss6j2muykh',
     });
 
     map.on('load', function() { //On map load, we want to do some stuff
