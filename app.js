@@ -12,7 +12,6 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiYm9nb21pbGFtIiwiYSI6ImNrOTNheWZsMjAwYmszbHFue
 var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/dark-v10',
-    class: 'map'
     });
 
     map.on('load', function() { //On map load, we want to do some stuff
@@ -54,6 +53,15 @@ var map = new mapboxgl.Map({
                     <li class='confirmed'>
                     Cases: ${selected[0].confirmed}
                     </li>
+                    <li class='confirmed'>
+                    Deaths: ${selected[0].deaths}
+                    </li>
+                    <li class='confirmed'>
+                    Recovered: ${selected[0].recovered}
+                    </li>
+                    <li class='confirmed'>
+                    Active: ${selected[0].active}
+                    </li>    
                 </ul>
                 `
             
