@@ -11,7 +11,8 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiYm9nb21pbGFtIiwiYSI6ImNrOTNheWZsMjAwYmszbHFue
 
 var map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/mapbox/dark-v10'
+    style: 'mapbox://styles/mapbox/dark-v10',
+    class: 'map'
     });
 
     map.on('load', function() { //On map load, we want to do some stuff
