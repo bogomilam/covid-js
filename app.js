@@ -56,7 +56,7 @@ var map = new mapboxgl.Map({
                     Recovered: ${kFormatter(selected[0].recovered)}
                     </li>
                     <li class='confirmed'>
-                    Active: ${selected[0].active}
+                    Active: ${kFormatter(selected[0].active)}
                     </li>    
                 </ul>
                 <div class='confirmed'>
