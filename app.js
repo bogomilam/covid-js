@@ -41,7 +41,7 @@ var map = new mapboxgl.Map({
              const reports = data
                 reports
                 const selected = reports.filter(c => c.country.includes(country))
-                // console.log(selected)
+                console.log(selected)
 
                 const html = `
                 <h3>${selected[0].country}</h3>
@@ -60,9 +60,10 @@ var map = new mapboxgl.Map({
                     </li>    
                 </ul>
                 <div class='confirmed'>
-                Death Rate by % : ${Math.round((selected[0].deaths / selected[0].confirmed) * 10 / 10)}
+                Death Rate: ${Math.round(selected[0].deaths / selected[0].confirmed * 100)} %
                 </div>
                 `
+                
 
                 new mapboxgl.Popup({className: 'popup'})
                 .setLngLat(mapEl.lngLat)
