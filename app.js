@@ -50,7 +50,7 @@ var map = new mapboxgl.Map({
                     Cases: ${kFormatter(selected[0].confirmed)}
                     </li>
                     <li class='confirmed'>
-                    Deaths: ${selected[0].deaths}
+                    Deaths: ${kFormatter(selected[0].deaths)}
                     </li>
                     <li class='confirmed'>
                     Recovered: ${kFormatter(selected[0].recovered)}
@@ -60,7 +60,7 @@ var map = new mapboxgl.Map({
                     </li>    
                 </ul>
                 <div class='confirmed'>
-                Death Rate by % : ${( (selected[0].deaths / selected[0].confirmed) * 100)}
+                Death Rate by % : ${Math.round((selected[0].deaths / selected[0].confirmed) * 10 / 10)}
                 </div>
                 `
 
