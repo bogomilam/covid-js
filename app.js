@@ -8,12 +8,6 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiYm9nb21pbGFtIiwiYSI6ImNrOTNheWZsMjAwYmszbHFue
 var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/bogomilam/cka3k5ygh0hn61iss6j2muykh',
-    latitude: 0,
-    longitude: 20,
-    width: "100vw",
-    height: "100vh",
-    zoom: 1.5,
-    center: [0, 20]
     });
 
     map.on('load', function() { //On map load, we want to do some stuff
@@ -53,18 +47,21 @@ var map = new mapboxgl.Map({
                 <h3>${selected[0].country}</h3>
                 <ul>
                     <li class='confirmed'>
-                    Cases: ${selected[0].confirmed}
+                    Cases: ${kFormatter(selected[0].confirmed)}
                     </li>
                     <li class='confirmed'>
                     Deaths: ${selected[0].deaths}
                     </li>
                     <li class='confirmed'>
-                    Recovered: ${selected[0].recovered}
+                    Recovered: ${kFormatter(selected[0].recovered)}
                     </li>
                     <li class='confirmed'>
                     Active: ${selected[0].active}
                     </li>    
                 </ul>
+                <div class='confirmed'>
+                Death Rate by % : ${( (selected[0].deaths / selected[0].confirmed) * 100)}
+                </div>
                 `
 
                 new mapboxgl.Popup({className: 'popup'})
@@ -79,6 +76,10 @@ var map = new mapboxgl.Map({
        map.on('load', function() {
            fetchAPI()
        })
+
+const kFormatter = num => {
+  return Math.abs(num) > 999 ? Math.sign(num)*((Math.abs(num)/1000).toFixed(1)) + 'k' : Math.sign(num)*Math.abs(num)
+}
 
 const fetchAPI = ()  => {
     return fetch(DATA_POINT, {  
