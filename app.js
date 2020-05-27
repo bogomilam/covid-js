@@ -7,7 +7,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiYm9nb21pbGFtIiwiYSI6ImNrOTNheWZsMjAwYmszbHFue
 
 var map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/bogomilam/cka3k5ygh0hn61iss6j2muykh',
+    style: 'mapbox://styles/bogomilam/cka3k5ygh0hn61iss6j2muykh'
     });
 
     map.on('load', function() { //On map load, we want to do some stuff
@@ -47,16 +47,16 @@ var map = new mapboxgl.Map({
                 <h3>${selected[0].country}</h3>
                 <ul>
                     <li class='confirmed'>
-                    Cases: ${kFormatter(selected[0].confirmed)}
+                    Cases: ${nFormatter(selected[0].confirmed)}
                     </li>
                     <li class='confirmed'>
-                    Deaths: ${kFormatter(selected[0].deaths)}
+                    Deaths: ${nFormatter(selected[0].deaths)}
                     </li>
                     <li class='confirmed'>
-                    Recovered: ${kFormatter(selected[0].recovered)}
+                    Recovered: ${nFormatter(selected[0].recovered)}
                     </li>
                     <li class='confirmed'>
-                    Active: ${kFormatter(selected[0].active)}
+                    Active: ${nFormatter(selected[0].active)}
                     </li>    
                 </ul>
                 <div class='confirmed'>
@@ -80,6 +80,16 @@ var map = new mapboxgl.Map({
 
 const kFormatter = num => {
   return Math.abs(num) > 999 ? Math.sign(num)*((Math.abs(num)/1000).toFixed(1)) + 'k' : Math.sign(num)*Math.abs(num)
+}
+
+const nFormatter =(num)  => {
+  if (num >= 1000000) {
+     return (num / 1000000).toFixed(1).replace(/\.0$/, '') + 'M';
+  }
+  if (num >= 1000) {
+     return (num / 1000).toFixed(1).replace(/\.0$/, '') + 'K';
+  }
+  return num;
 }
 
 const fetchAPI = ()  => {
