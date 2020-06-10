@@ -1,20 +1,15 @@
-
-
   #map .mapboxgl-popup-content {
     padding: 10px;
     max-width: 300px;
     padding-top: 20px;
-    background-color: aquamarine;; 
-    zoom: 2;
+    background-color: aquamarine;;
   }
 
-  
   #map .mapboxgl-popup-content ul {
     list-style: none;
     margin: 0;
     padding: 0;
     float: left;
-    
   }
   
   #map .mapboxgl-popup-content ul h3 {
@@ -25,4 +20,4 @@
     float:left; 
     width: 30px; 
     margin-right: 10px;
-  } 
+  }

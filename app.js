@@ -43,7 +43,7 @@ var map = new mapboxgl.Map({
              const reports = data
                 reports
                 const selected = reports.filter(c => c.country.includes(country))
-                console.log(selected)
+                // console.log(selected)
 
                 const html = `
                 <h3>${selected[0].country}</h3>
