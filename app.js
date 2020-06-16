@@ -8,7 +8,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiYm9nb21pbGFtIiwiYSI6ImNrOTNheWZsMjAwYmszbHFue
 var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/bogomilam/cka3k5ygh0hn61iss6j2muykh',
-    center: [45.243, 67.204894],
+    center: [40.243, 42.204894],
     minZoom: 2
     });
 
@@ -61,9 +61,9 @@ var map = new mapboxgl.Map({
                     Active: ${nFormatter(selected[0].active)}
                     </li>    
                 </ul>
-                <div class='confirmed'>
+                <h3 class='confirmed'>
                 Death Rate: ${Math.round(selected[0].deaths / selected[0].confirmed * 100)} %
-                </div>
+                </h3>
                 `
                 
 
