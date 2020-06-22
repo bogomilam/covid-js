@@ -61,9 +61,9 @@ var map = new mapboxgl.Map({
                     Active: ${nFormatter(selected[0].active)}
                     </li>    
                 </ul>
-                <h3 class='confirmed'>
+                <h2 class='confirmed'>
                 Death Rate: ${Math.round(selected[0].deaths / selected[0].confirmed * 100)} %
-                </h3>
+                </h2>
                 `
                 
 
