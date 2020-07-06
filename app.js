@@ -12,8 +12,8 @@ var map = new mapboxgl.Map({
     minZoom: 2
     });
 
-    map.on('load', function() { //On map load, we want to do some stuff
-        map.addLayer({ //here we are adding a layer containing the tileset we just uploaded
+    map.on('load', function() {
+        map.addLayer({
           'id': 'countries',
           'source': {
             'type': 'vector',
@@ -22,7 +22,7 @@ var map = new mapboxgl.Map({
           'source-layer': 'ne_10m_admin_0_countries_4-citjsm',
           'type': 'fill',
           'paint': {
-            'fill-color': '#52489C', //this is the color you want your tileset to have (I used a nice purple color)
+            'fill-color': '#52489C',
             'fill-outline-color': '#00FFFF'
           }
         });
@@ -61,9 +61,9 @@ var map = new mapboxgl.Map({
                     Active: ${nFormatter(selected[0].active)}
                     </li>    
                 </ul>
-                <h2 class='confirmed'>
+                <h3>
                 Death Rate: ${Math.round(selected[0].deaths / selected[0].confirmed * 100)} %
-                </h2>
+                </h3>
                 `
                 
 
