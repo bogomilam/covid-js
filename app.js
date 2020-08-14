@@ -34,7 +34,7 @@ var map = new mapboxgl.Map({
          fetch(DATA_POINT, {  
             "method": "GET",
             "headers": {
-              "x-rapidapi-host": "covid19-data.p.rapidapi.com",
+              "x-rapidapi-host": "covid19-data.p.rapidapi.com/all",
               "x-rapidapi-key": "7b4a939c2amsh6771ab45c110f92p15524ajsn651844dca99f"
             }
           })
@@ -75,7 +75,6 @@ var map = new mapboxgl.Map({
       })
 
 
-      
        map.on('load', function() {
            fetchAPI()
        })
